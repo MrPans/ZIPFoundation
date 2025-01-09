@@ -31,7 +31,7 @@ extension FileManager {
     ///   - progress: A progress object that can be used to track or cancel the zip operation.
     /// - Throws: Throws an error if the source item does not exist or the destination URL is not writable.
     public func zipItem(at sourceURL: URL, to destinationURL: URL,
-                        shouldKeepParent: Bool = true, compressionMethod: CompressionMethod = .none,
+                        shouldKeepParent: Bool = true, compressionMethod: CompressionMethod = .deflate,
                         progress: Progress? = nil) throws {
         let fileManager = FileManager()
         guard fileManager.itemExists(at: sourceURL) else {
